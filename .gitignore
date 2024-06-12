@@ -1,2 +1,15 @@
-__pycache__
-.idea
+# Python-specific
+*.pyc
+__pycache__/
+*.pyo
+.idea/
+# Virtual environments
+venv/
+env/
+.env/
+
+# Streamlit-specific
+streamlit/state/
+streamlit/config.toml
+streamlit/*.log
+
