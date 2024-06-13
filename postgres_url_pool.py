@@ -43,7 +43,7 @@ async def edit_data(pool, id_value, data):
 # Main function that initialises connection pool
 async def main(key, data_list):
     # Replace with your PostgresSQL connection details
-    pool = await asyncpg.create_pool(user='ic_merck_user', password='password123#', database='merck_db',
+    pool = await asyncpg.create_pool(user='ic_m_user', password='password123#', database='m_db',
                                      host='localhost', port='5432')
 
     tasks = []
