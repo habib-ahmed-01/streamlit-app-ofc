@@ -4,8 +4,8 @@ from sqlalchemy import create_engine
 dialect = "postgresql"
 host = "localhost"
 port = "5432"
-database = "merck_db"
-username = "ic_merck_user"
+database = "m_db"
+username = "ic_m_user"
 password = "password123#"
 
 # Creating the engine string
