@@ -4,12 +4,21 @@ from ilos import get_ilo_data, process_ilo_rows
 from msz import get_msz_data, process_msz_rows
 import pandas as pd
 from upload_ilo_csv import save_ilo_csv, save_msz_csv
-from Home import auth
+from Home import users
+from streamlit_authenticator import Authenticate
 
+
+auth = Authenticate(
+    users,
+    "streamlit_auth",
+    "streamlit_auth_key",
+    cookie_expiry_days=30
+)
 name, authentication_status, username = auth.login()
-
-if authentication_status:
-    st.set_page_config(layout="wide")
+# st.write(name, authentication_status, username)
+# st.session_state
+if st.session_state["authentication_status"]:
+    # st.set_page_config(layout="wide")
     st.title("ICINGA: The Open Source Monitoring Tool")
     if st.button("Clear Cache", type="primary"):
         st.cache_data.clear()

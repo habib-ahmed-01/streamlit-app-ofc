@@ -28,7 +28,7 @@ auth = stauth.Authenticate(
     "streamlit_auth_key",
     cookie_expiry_days=30
 )
-
+# st.session_state
 name, authentication_status, username = auth.login()
 
 if authentication_status:

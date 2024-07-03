@@ -1,7 +1,15 @@
 import streamlit as st
 from servers_from_scom import get_sample_data
-from Home import auth
+from Home import users
+from streamlit_authenticator import Authenticate
 
+
+auth = Authenticate(
+    users,
+    "streamlit_auth",
+    "streamlit_auth_key",
+    cookie_expiry_days=30
+)
 name, authentication_status, username = auth.login()
 
 if authentication_status:
